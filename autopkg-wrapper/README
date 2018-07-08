@@ -1,0 +1,9 @@
+This Autopkg Py script was created to streamline and automate some technician tasks
+associated with the use of Autopkg for pulling specific repositories (based upon a 
+file listing the requested pkgs), and would then create desktop folders for each
+newly acquired package, would query VirusTotal for information on the downloaded pkgs, 
+and would open a web browser to upload the pkgs into the JSS.
+
+J Long
+
+
