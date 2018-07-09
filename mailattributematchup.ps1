@@ -1,13 +1,13 @@
 ﻿
 $Date = (get-date -Format filedate)
 
-Get-ADUser -Filter * -SearchBase "OU=Users,OU=WPPK1,OU=Sites,DC=corp,DC=warbyparker,DC=com" -Properties name,samaccountname,mail,givenName,surname,distinguishedname | 
+Get-ADUser -Filter * -SearchBase "OU=Users,OU=,OU=,DC=,DC=,DC=com" -Properties name,samaccountname,mail,givenName,surname,distinguishedname | 
  Select-Object name,samaccountname,mail,givenName,surname,distinguishedname | Export-Csv C:\output\CorpUsers-$Date.csv
 
-Get-ADUser -Filter * -SearchBase "OU=Users,OU=WPRetail,OU=Sites,DC=corp,DC=warbyparker,DC=com" -Properties name,samaccountname,mail,givenName,surname,distinguishedname | 
+Get-ADUser -Filter * -SearchBase "OU=Users,OU=,OU=,DC=,DC=,DC=com" -Properties name,samaccountname,mail,givenName,surname,distinguishedname | 
  Select-Object name,samaccountname,mail,givenName,surname,distinguishedname | Export-Csv C:\output\RetailUsers-$Date.csv
 
-Get-ADUser -Filter * -SearchBase "OU=WPlab,OU=Sites,DC=corp,DC=warbyparker,DC=com" -Properties name,samaccountname,mail,givenName,surname,distinguishedname | 
+Get-ADUser -Filter * -SearchBase "OU=,OU=,DC=,DC=,DC=com" -Properties name,samaccountname,mail,givenName,surname,distinguishedname | 
  Select-Object name,samaccountname,mail,givenName,surname,distinguishedname | Export-Csv C:\output\LabUsers-$Date.csv
 
 
