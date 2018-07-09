@@ -8,12 +8,12 @@
 #  
 # Organizational Unit to search  
 #  
-#$SearchBase='OU=Disabled Users,DC=corp,DC=warbyparker,DC=com'  
+# 
 #  
 
 $31Days = (get-date).adddays(-31)
 
-Search-ADAccount -UsersOnly -AccountDisabled -SearchBase "OU=Disabled Users,DC=corp,DC=warbyparker,DC=com" |
+Search-ADAccount -UsersOnly -AccountDisabled -SearchBase "OU=Disabled Users,DC=,DC=,DC=com" |
 sort LastLogonDate | Select Name,LastLogonDate,DistinguishedName | 
 out-gridview -title "Disabled Employees" |
-Export-Csv "C:\Users\jeremy.long\DisabledAccountsinLast30Days.csv" -encoding "unicode"
+Export-Csv "C:\Users\username\DisabledAccountsinLast30Days.csv" -encoding "unicode"
