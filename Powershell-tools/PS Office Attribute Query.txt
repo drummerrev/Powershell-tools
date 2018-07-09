@@ -1,0 +1,33 @@
+Get-ADUser -Filter * -Properties physicaldeliveryofficename | Select-Object -ExpandProperty physicaldeliveryofficename | sort-object -Unique
+##Lists all unique "Office" entries##
+
+
+Get-ADUser -filter * -Properties * | ? {($_.physicaldeliveryofficename -eq "Puck / 161") -or ($_.physicaldeliveryofficename -eq "Puck HQ") -or ($_.physicaldeliveryofficename -eq "Warby Parker HQ") -or ($_.physicaldeliveryofficename -eq "Warby Parker HQ7F") -or ($_.physicaldeliveryofficename -eq "HQ") -or ($_.physicaldeliveryofficename -eq "161 - PT associate") -or ($_.physicaldeliveryofficename -eq "161 - PT assoiate") -or ($_.physicaldeliveryofficename -eq "NYC") -or ($_.physicaldeliveryofficename -eq "Office - Butterick") -or ($_.physicaldeliveryofficename -eq "Puck") -or ($_.physicaldeliveryofficename -eq "Butterick Showroom") -or ($_.physicaldeliveryofficename -eq "Butterick HQ") -or ($_.physicaldeliveryofficename -eq "Butterick") -or ($_.physicaldeliveryofficename -eq "Buterick HQ") -or ($_.physicaldeliveryofficename -eq "Butterick - HQ")} | Export-Csv c:\output\Butterick-Office-ADUsers.csv
+##Lists all users with Office attribute containing "Butterick"
+
+
+Get-ADUser -filter * -Properties * | ? {($_.physicaldeliveryofficename -eq "Nashvill") -or ($_.physicaldeliveryofficename -eq "Nashville - HQ") -or ($_.physicaldeliveryofficename -eq "Nashville")} | Export-Csv c:\output\Nashville-Office-ADUsers.csv
+##Lists all users with Office attribute containing "Nashville"
+
+Get-ADUser -filter * -Properties * | ? {($_.physicaldeliveryofficename -eq $null)} | Export-Csv c:\output\Blank-Office-ADUsers.csv
+##Lists all users with Offi
+
+161 - PT associate
+161 - PT assoiate
+Buterick HQ
+Butterick
+Butterick - HQ
+Butterick HQ
+Butterick Showroom
+NYC
+Office - Butterick
+Puck
+Puck / 161
+Puck HQ
+Warby Parker HQ
+Warby Parker HQ7F
+HQ
+
+Nashvill
+Nashville
+Nashville - HQ
