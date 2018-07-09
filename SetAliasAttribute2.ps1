@@ -14,6 +14,6 @@ $users = Import-Csv -Path C:\output\BatchAliases.csv
             
 foreach ($user in $users) {            
 #Search in specified OU and Update existing attributes            
- Get-ADUser -Filter "SamAccountName -eq '$($user.samaccountname)'" -Properties * -SearchBase "OU=Sites,DC=corp,DC=warbyparker,DC=com" |            
+ Get-ADUser -Filter "SamAccountName -eq '$($user.samaccountname)'" -Properties * -SearchBase "OU=,DC=,DC=,DC=com" |            
   Set-ADUser -Add @{otherMailbox="$($user.otherMailbox)"}            
 }
