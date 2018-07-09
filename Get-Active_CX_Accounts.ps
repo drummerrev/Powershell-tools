@@ -1,0 +1,5 @@
+Get-ADGroup -filter {Name -like "Customer_Experience" } |
+Get-ADGroupMember -Recursive |
+select -Unique|
+get-adUser -Properties mail |
+select -ExpandProperty Mail | Out-file c:\output\Customer_Experience.txt
