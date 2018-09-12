@@ -1,7 +1,0 @@
-***********
-## Get Email address for all AD accounts with "CX" in the description, and output to "CXAs.txt" file ##
-***********
-
-
-Get-ADUser -Filter {description -like "*CX*"} -Properties mail |
-select -ExpandProperty Mail | Out-file c:\output\CXAs.txt
