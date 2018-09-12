@@ -33,6 +33,6 @@ ForEach($User in $ExpiredAccountsNotDisabled) {
   Set-ADUser -Identity $User.SamAccountName -Description "Disabled $Date" -Enabled $false
   
   # Move user to OU for Disabled Accounts
-  Get-ADUser -identity $User.SamAccountName -Server:"Nimbus-AD01.corp.warbyparker.com" | Move-ADobject -targetpath $DisabledAccountsOU 
+  Get-ADUser -identity $User.SamAccountName -Server:"server.info" | Move-ADobject -targetpath $DisabledAccountsOU 
   }
  
