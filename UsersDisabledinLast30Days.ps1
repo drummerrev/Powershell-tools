@@ -1,18 +1,8 @@
-# Get the Current Date  
-#   
-#$CurrentDate=GET-DATE  
-#  
-# Number of Days to check back.    
-#   
-#$NumberDays=31  
-#  
-# Organizational Unit to search  
-#  
-# 
-#  
+# Set variable for date 31 days ago
 
 $31Days = (get-date).adddays(-31)
 
+# Search within Disabled Users OU for User accounts ...
 Search-ADAccount -UsersOnly -AccountDisabled -SearchBase "OU=Disabled Users,DC=,DC=,DC=com" |
 sort LastLogonDate | Select Name,LastLogonDate,DistinguishedName | 
 out-gridview -title "Disabled Employees" |
