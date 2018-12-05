@@ -9,8 +9,8 @@ Export-Csv "C:\Users\username\RecentlyCreatedAccounts.csv" -encoding "unicode"
 
 #Sends Email of results to designated Account auditors
 
-Send-MailMessage -To "username <email address>" -Cc "username <jemail address>" -From "WP AD Reporting <email address>" `
+Send-MailMessage -To "username <email address>" -Cc "username <jemail address>" -From "Company AD Reporting <email address>" `
  -Subject "AD Accounts Created in Last Week" `
- -Body "The attached CSV file contains the Warby Parker Active Directory accounts that were created within the last 7 days.  
+ -Body "The attached CSV file contains the Company Active Directory accounts that were created within the last 7 days.  
       The report includes last Modification date and last Logon date as well for account auditing purposes." `
  -Attachments "c:\Users\username\RecentlyCreatedAccounts.csv" -SmtpServer smtp.server.name
