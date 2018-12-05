@@ -13,12 +13,12 @@ $Date = Get-Date -Format g
 #endregion
 
 #Email Expired Accounts List to AD Account Auditors
-Search-ADAccount -AccountExpired | Where-Object { $_.Enabled -eq $true } | Export-Csv "C:\WP_Scripts\ExpiredandDisabledToday.csv" -encoding "unicode"
+Search-ADAccount -AccountExpired | Where-Object { $_.Enabled -eq $true } | Export-Csv "C:\Company_Scripts\ExpiredandDisabledToday.csv" -encoding "unicode"
 
-Send-MailMessage -To "username <email address>" -Cc "username <email address>" -From "WP AD Reporting <email address>" `
+Send-MailMessage -To "username <email address>" -Cc "username <email address>" -From "Company AD Reporting <email address>" `
  -Subject "Expired AD Accounts that are Now Disabled" `
- -Body "The attached CSV file contains the Warby Parker Active Directory accounts that expired today and were disabled by Daily Automation." `
- -Attachments "c:\WP_Scripts\ExpiredandDisabledToday.csv" -SmtpServer smtp.server.name
+ -Body "The attached CSV file contains the Company Active Directory accounts that expired today and were disabled by Daily Automation." `
+ -Attachments "c:\Company_Scripts\ExpiredandDisabledToday.csv" -SmtpServer smtp.server.name
 
  
 #Loop through Expired Users
